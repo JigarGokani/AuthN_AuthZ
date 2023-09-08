@@ -106,12 +106,19 @@ exports.login = async (req,res) => {
             }
 
 
-            res.cookie("jigarcookie",token,options).status(200).json({
+            res.cookie("token",token,options).status(200).json({
                 success:true,
                 token,
                 user,
                 message:'User Logged In Successfully',
             });
+
+            // res.status(200).json({
+            //     success:true,
+            //     token,
+            //     user,
+            //     message:'User Logged In Successfully',
+            // });
 
         }
         else{
